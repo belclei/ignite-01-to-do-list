@@ -1,0 +1,54 @@
+.addBar {
+  position: relative;
+  top: 50%;
+
+  margin: auto;
+  width: 50%;
+
+  transform: translate(0, -50%);
+}
+
+.addBar form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  height: 3.375rem;
+}
+
+.addBar form input {
+  flex: 1;
+  color: var(--gray-100);
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 0 1rem;
+  outline: transparent;
+  height: 100%;
+  border: 1px solid var(--gray-700);
+  transition: background-color 0.1s;
+  }
+
+.addBar form input:focus {
+  border: 1px solid var(--purple-dark);
+}
+
+.addBar form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: 8px;
+  border: 0;
+  color: var(--gray-100);
+  cursor: pointer;
+  padding: 0 1rem;
+  height: 100%;
+  outline: transparent;
+
+  background-color: var(--blue-dark);
+  transition: background-color 0.1s;
+}
+
+  .addBar form button:hover {
+    background-color: var(--blue);
+  }
