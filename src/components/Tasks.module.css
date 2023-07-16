@@ -1,0 +1,29 @@
+.tasks {
+  margin: 2.312rem auto 0;
+  width: 50%;
+}
+
+.tasksInfo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  font-weight: bold;
+  }
+
+.tasksInfo output {
+  font-size: .75rem;
+  color: var(--gray-200);
+  background: var(--gray-400);
+  border-radius: 50%;
+  padding: 2px 8px;
+}
+
+.createdTask {
+  font-size: .875rem;
+  color: var(--blue);
+}
+.doneTask {
+  font-size: .875rem;
+  color: var(--purple);
+}
