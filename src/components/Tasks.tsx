@@ -1,3 +1,4 @@
+import { EmptyList } from './EmptyList'
 import styles from './Tasks.module.css'
 
 export function Tasks() {
@@ -13,6 +14,7 @@ export function Tasks() {
           <output>9</output>
         </div>
       </div>
+      <EmptyList />
     </section>
   )
 }
