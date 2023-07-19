@@ -1,4 +1,4 @@
-import { EmptyList } from './EmptyList'
+import { Task } from './Task'
 import styles from './Tasks.module.css'
 
 export function Tasks() {
@@ -14,7 +14,10 @@ export function Tasks() {
           <output>9</output>
         </div>
       </div>
-      <EmptyList />
+      <div className={styles.taskList}>
+        <Task checked />
+        <Task />
+      </div>
     </section>
   )
 }

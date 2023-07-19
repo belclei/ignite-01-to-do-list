@@ -1,4 +1,5 @@
 :root {
+  --blue-dark-20: hsl(202, 68%, 37%, .2);
   --blue-dark: #1e6f9f;
   --blue: #4ea8de;
   --purple-dark: #5e60ce;

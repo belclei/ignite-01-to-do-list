@@ -27,3 +27,11 @@
   font-size: .875rem;
   color: var(--purple);
 }
+
+.taskList {
+  margin-top: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
