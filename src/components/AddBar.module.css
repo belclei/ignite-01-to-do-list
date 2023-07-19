@@ -46,6 +46,11 @@
   transition: background-color 0.1s;
 }
 
-  .addBar form button:hover {
-    background-color: var(--blue);
-  }
+.addBar form button:hover {
+  background-color: var(--blue);
+}
+
+.addBar form button:disabled {
+  cursor: not-allowed;
+  background-color: var(--blue-dark);
+}

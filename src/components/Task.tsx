@@ -1,17 +1,25 @@
 import styles from "./Task.module.css";
 import { Check, Circle, Trash } from 'phosphor-react';
 
-export function Task({checked}) {
+export interface Task {
+  id: string;
+  isCompleted: boolean;
+  text: string;
+}
+interface TaskProps {
+  task: Task;
+  deleteTask: ((id: string) => void);
+  completeTask: ((id: string) => void);
+}
+export function Task({task, deleteTask, completeTask} : TaskProps) {
   return (
-      <label className={styles.task}>
-        <input type='checkbox' onChange={()=> checked = !checked}/>
-        {checked ? (<Check size={24} />) : (<Circle size={24} />)}
-        <span>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, at quod minima quae placeat soluta assumenda blanditiis sit id molestiae cumque ex harum ipsam iure atque unde. Maxime, totam neque!
-        </span>
-        <button>
-          <Trash size={24} />
-        </button>
-      </label>
+    <label className={styles.task} key={task.id}>
+      <input type='checkbox' onChange={() => completeTask(task.id)}/>
+      {task.isCompleted ? (<Check size={24} />) : (<Circle size={24} />)}
+      <span> {task.text} </span>
+      <button onClick={()=> deleteTask(task.id)}>
+        <Trash size={24} />
+      </button>
+    </label>
   )
 }
