@@ -20,17 +20,34 @@ const tasksStub : Task[] = [
 ];
 
 export function App() {
-  const [tasks, setTasks] = useState(tasksStub);
+  const [tasks, setTasks] = useState<Task[]>(tasksStub);
 
-  function addTask(newTask:Task) {
+  function addTask(newTask: Task) {
     setTasks([...tasks, newTask])
+  }
+
+  function deleteTask(id: string) {
+    setTasks( tasks.filter((task) => task.id !== id) )
+  }
+
+  function toggleIsCompleted(id: string) {
+    setTasks(tasks.map<Task>((task) => {
+      if (task.id === id) {
+        return {
+        ...task,
+        isCompleted: !task.isCompleted
+        }
+      }
+
+      return task;
+    }))
   }
 
   return (
     <>
       <Header />
-      <AddBar onAddTask={addTask} />
-      <Tasks tasks={tasks}/>
+      <AddBar onAddTask={addTask}/>
+      <Tasks tasks={tasks}  onComplete={toggleIsCompleted} onDelete={deleteTask}/>
     </>
   )
 }
