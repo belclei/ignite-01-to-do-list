@@ -6,21 +6,8 @@ import './global.css'
 import { Task } from './components/Task'
 import { useState } from 'react'
 
-const tasksStub : Task[] = [
-  {
-    id: 'um',
-    text: 'primeiro',
-    isCompleted: true
-  },
-  {
-    id: 'dois',
-    text: 'segundo',
-    isCompleted: false
-  },
-];
-
 export function App() {
-  const [tasks, setTasks] = useState<Task[]>(tasksStub);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   function addTask(newTask: Task) {
     setTasks([...tasks, newTask])
